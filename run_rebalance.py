@@ -11,11 +11,15 @@ from src.rebalance import (
 
 
 def main():
-    parser = argparse.ArgumentParser(description="WM Rebalancing Toolkit")
+    parser = argparse.ArgumentParser(
+        description="WM Rebalancing Toolkit",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
     parser.add_argument("--holdings", default="data/holdings.csv")
     parser.add_argument("--targets", default="data/target_weights.csv")
     parser.add_argument("--cash", type=float, default=0.0)
-    parser.add_argument("--cash-buffer", type=float, default=0.0, help="Cash buffer as a fraction (e.g., 0.02 for 2%)")
+    parser.add_argument("--cash-buffer", type=float, default=0.0,
+                    help="Cash buffer as a fraction (e.g., 0.02 for 2 percent)")
     parser.add_argument("--no-sells", action="store_true")
     parser.add_argument("--min-trade", type=float, default=0.0)
     parser.add_argument("--output", default="outputs")
