@@ -1,0 +1,2 @@
+CurrentPortfolioValueCHF,CashAddedCHF,TargetPortfolioValueCHF,CashBufferFraction,InvestableValueCHF,ExpectedCashLeftCHF,MinWeight,MaxWeight,RoundShares,AllowSells,MinTradeCHF,TotalBuyCHF_Rounded,TotalSellCHF_Rounded
+12371.26993560791,1000.0,13371.26993560791,0.02,13103.844536895751,267.4253987121592,0.0,0.4,True,True,50.0,2400.4799194335938,1311.3999786376953
