@@ -31,3 +31,19 @@ Default sample tickers:
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+
+
+```
+## Example Output
+
+The tool generates:
+- A trade list with BUY / SELL / HOLD decisions
+- A portfolio summary
+- An Excel file for client-facing review
+
+Example output files:
+- `outputs/trades.csv`
+- `outputs/summary.csv`
+- `outputs/rebalance_output.xlsx`
+
+This mirrors how portfolio managers prepare rebalancing instructions in practice.
