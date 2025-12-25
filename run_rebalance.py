@@ -1,5 +1,6 @@
 import argparse
 import pandas as pd
+from pathlib import Path
 
 from src.rebalance import (
     load_holdings,
@@ -46,10 +47,13 @@ def main():
 
     trades, summary = compute_rebalance(holdings, targets, prices, cfg)
 
-    out_dir = args.output.rstrip("/")
-    trades_path_csv = f"{out_dir}/trades.csv"
-    summary_path_csv = f"{out_dir}/summary.csv"
-    xlsx_path = f"{out_dir}/rebalance_output.xlsx"
+    # --- Output paths (auto-create directory) ---
+    out_dir = Path(args.output)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    trades_path_csv = out_dir / "trades.csv"
+    summary_path_csv = out_dir / "summary.csv"
+    xlsx_path = out_dir / "rebalance_output.xlsx"
 
     trades.to_csv(trades_path_csv, index=False)
     summary.to_csv(summary_path_csv, index=False)
@@ -62,6 +66,8 @@ def main():
     print(f"- {trades_path_csv}")
     print(f"- {summary_path_csv}")
     print(f"- {xlsx_path}")
+
+    
 
 
 if __name__ == "__main__":
